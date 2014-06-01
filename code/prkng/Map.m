@@ -344,7 +344,7 @@
     //    NSString *kmAwayString = [NSString stringWithFormat:@"%f", kilometersAway];
     
     cell.lotDetailLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:14];
-    cell.lotDetailLabel.text = [NSString stringWithFormat:@"%@ km  %@ mins  %@ %@", kmAway, minutesAway, remainingSpots, [remainingSpots intValue] == 1 ? @"spot" : @"spot"];
+    cell.lotDetailLabel.text = [NSString stringWithFormat:@"%@ km  %@ mins  %@ %@", kmAway, minutesAway, remainingSpots, [remainingSpots intValue] == 1 ? @"spot" : @"spots"];
     
     cell.rateLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:25];
     cell.rateLabel.text = rate;

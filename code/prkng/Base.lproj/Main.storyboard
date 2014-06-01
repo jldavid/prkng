@@ -189,7 +189,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kVu-eW-QjR">
-                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -239,7 +239,6 @@
                                         <connections>
                                             <outlet property="elapsedTimeLabel" destination="fcO-bY-VKJ" id="HKq-u8-oI9"/>
                                             <outlet property="hoursStayedLabel" destination="Ks4-LN-YPP" id="Tld-u5-pGt"/>
-                                            <outlet property="lotIDImageView" destination="qc6-AS-Xc4" id="AJi-Rb-Vpw"/>
                                             <outlet property="lotIDLabel" destination="A5C-7C-k0S" id="3uJ-jz-WO8"/>
                                             <outlet property="spotStatusLabel" destination="Dnx-nS-ZBA" id="QwU-xn-Myc"/>
                                         </connections>

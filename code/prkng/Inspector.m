@@ -23,6 +23,8 @@
                                        initWithImage:disclosure style:0 target:self action:@selector(gback)];
     NSArray *actionButtonItems = @[disclosureItem];
     self.navigationItem.leftBarButtonItems = actionButtonItems;
+    
+    [self populateDummyData];
 }
 
 -(void) gback {
