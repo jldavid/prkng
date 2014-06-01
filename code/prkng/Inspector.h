@@ -1,5 +1,7 @@
 #import <UIKit/UIKit.h>
 
-@interface Inspector : UIViewController
+@interface Inspector : UIViewController <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end

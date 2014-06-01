@@ -1,19 +1,13 @@
 #import "Inspector.h"
+#import "InspectorParkingLotCell.h"
 
 @interface Inspector ()
+
+@property (strong, nonatomic) NSMutableArray *parkingLots;
 
 @end
 
 @implementation Inspector
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
 
 - (void)viewDidLoad
 {
@@ -21,21 +15,100 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (void)populateDummyData
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    NSDictionary *p1 = @{@"spotStatus" : @"Spot J7 is Vacant",
+                         @"elapsedTime" : @"1 min ago",
+                         @"hoursStayed" : @"2 hours stayed"};
+    
+    [self.parkingLots addObject:p1];
+    
+    NSDictionary *p2 = @{@"spotStatus" : @"Spot J7 is Vacant",
+                         @"elapsedTime" : @"1 min ago",
+                         @"hoursStayed" : @"2 hours stayed"};
+    
+    [self.parkingLots addObject:p2];
+    
+    NSDictionary *p3 = @{@"spotStatus" : @"Spot J7 is Vacant",
+                         @"elapsedTime" : @"1 min ago",
+                         @"hoursStayed" : @"2 hours stayed"};
+    
+    [self.parkingLots addObject:p3];
+    
+    NSDictionary *p4 = @{@"spotStatus" : @"Spot J7 is Vacant",
+                         @"elapsedTime" : @"1 min ago",
+                         @"hoursStayed" : @"2 hours stayed"};
+    
+    [self.parkingLots addObject:p4];
+    
+    NSDictionary *p5 = @{@"spotStatus" : @"Spot J7 is Vacant",
+                         @"elapsedTime" : @"1 min ago",
+                         @"hoursStayed" : @"2 hours stayed"};
+
+    [self.parkingLots addObject:p5];
+
+    NSDictionary *p6 = @{@"spotStatus" : @"Spot J7 is Vacant",
+                         @"elapsedTime" : @"1 min ago",
+                         @"hoursStayed" : @"2 hours stayed"};
+
+    [self.parkingLots addObject:p6];
+    
+    [self setupTableView];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (void)setupTableView
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
+    [self.tableView reloadData];
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:34.0f/255.0f
+                                                     green:34.0f/255.0f
+                                                      blue:34.0f/255.0f alpha:1];
 }
-*/
+
+#pragma mark UITableView Datasource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.parkingLots.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    InspectorParkingLotCell *cell = (InspectorParkingLotCell *)[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
+    
+    NSDictionary *parkingDict = self.parkingLots[indexPath.row];
+    
+    NSString *spotStatus = [parkingDict objectForKey:@"spotStatus"];
+    NSString *elapsedTime = [parkingDict objectForKey:@"elapsedTime"];
+    NSString *hoursStayed = [parkingDict objectForKey:@"hoursStayed"];
+    
+//    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"disclosureInd.png"]];
+    
+    cell.lotIDLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:17];
+    cell.lotIDLabel.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
+
+    cell.spotStatusLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:17];
+    cell.spotStatusLabel.text = spotStatus;
+    
+    cell.elapsedTimeLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:19];
+    cell.elapsedTimeLabel.text = [NSString stringWithFormat:@"%@ %@", elapsedTime, [elapsedTime intValue] == 1 ? @"min" : @"mins"];
+    
+    cell.hoursStayedLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:14];
+    cell.hoursStayedLabel.text = [NSString stringWithFormat:@"%@ %@ stayed", hoursStayed, [hoursStayed intValue] == 1 ? @"hour" : @"hours"];
+    
+    return cell;
+}
+
+#pragma mark Lazy Loading
+
+- (NSMutableArray *)parkingLots
+{
+    if (!_parkingLots)
+        _parkingLots = [[NSMutableArray alloc] init];
+    
+    return _parkingLots;
+}
 
 @end

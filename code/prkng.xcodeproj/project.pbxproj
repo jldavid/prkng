@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31014598193B3664007C9B8F /* InspectorParkingLotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31014597193B3664007C9B8F /* InspectorParkingLotCell.m */; };
 		314B8FAD193B232F00C4E8DC /* MKMapView+ZoomLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 314B8FAC193B232F00C4E8DC /* MKMapView+ZoomLevel.m */; };
 		31A99E56193AE51E005C194D /* iBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A99E53193AE51E005C194D /* iBeaconService.m */; };
 		31A99E57193AE51E005C194D /* BeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A99E55193AE51E005C194D /* BeaconRegion.m */; };
@@ -58,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		31014596193B3664007C9B8F /* InspectorParkingLotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InspectorParkingLotCell.h; sourceTree = "<group>"; };
+		31014597193B3664007C9B8F /* InspectorParkingLotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InspectorParkingLotCell.m; sourceTree = "<group>"; };
 		314B8FAB193B232F00C4E8DC /* MKMapView+ZoomLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MKMapView+ZoomLevel.h"; sourceTree = "<group>"; };
 		314B8FAC193B232F00C4E8DC /* MKMapView+ZoomLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MKMapView+ZoomLevel.m"; sourceTree = "<group>"; };
 		31A99E52193AE51E005C194D /* iBeaconService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iBeaconService.h; sourceTree = "<group>"; };
@@ -216,6 +219,8 @@
 				9E52FC49193B18B0007F1774 /* EndMeter.m */,
 				9E52FC4B193B193C007F1774 /* Inspector.h */,
 				9E52FC4C193B193C007F1774 /* Inspector.m */,
+				31014596193B3664007C9B8F /* InspectorParkingLotCell.h */,
+				31014597193B3664007C9B8F /* InspectorParkingLotCell.m */,
 			);
 			path = prkng;
 			sourceTree = "<group>";
@@ -418,6 +423,7 @@
 				9E52FC4D193B193C007F1774 /* Inspector.m in Sources */,
 				9E18063E193AE3F900037286 /* FSNData.m in Sources */,
 				314B8FAD193B232F00C4E8DC /* MKMapView+ZoomLevel.m in Sources */,
+				31014598193B3664007C9B8F /* InspectorParkingLotCell.m in Sources */,
 				9E180621193AD21900037286 /* Splash.m in Sources */,
 				9E1805F7193ACEAC00037286 /* main.m in Sources */,
 			);
