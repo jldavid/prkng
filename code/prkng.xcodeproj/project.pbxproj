@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		31A99E56193AE51E005C194D /* iBeaconService.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A99E53193AE51E005C194D /* iBeaconService.m */; };
 		31A99E57193AE51E005C194D /* BeaconRegion.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A99E55193AE51E005C194D /* BeaconRegion.m */; };
+		31A99E5D193B0F1A005C194D /* ParkingLotCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A99E5C193B0F1A005C194D /* ParkingLotCell.m */; };
 		9E1805EB193ACEAC00037286 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1805EA193ACEAC00037286 /* Foundation.framework */; };
 		9E1805ED193ACEAC00037286 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1805EC193ACEAC00037286 /* CoreGraphics.framework */; };
 		9E1805EF193ACEAC00037286 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E1805EE193ACEAC00037286 /* UIKit.framework */; };
@@ -50,6 +51,8 @@
 		31A99E53193AE51E005C194D /* iBeaconService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iBeaconService.m; sourceTree = "<group>"; };
 		31A99E54193AE51E005C194D /* BeaconRegion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BeaconRegion.h; sourceTree = "<group>"; };
 		31A99E55193AE51E005C194D /* BeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconRegion.m; sourceTree = "<group>"; };
+		31A99E5B193B0F1A005C194D /* ParkingLotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingLotCell.h; sourceTree = "<group>"; };
+		31A99E5C193B0F1A005C194D /* ParkingLotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingLotCell.m; sourceTree = "<group>"; };
 		9E1805E7193ACEAC00037286 /* prkng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prkng.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1805EA193ACEAC00037286 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E1805EC193ACEAC00037286 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -171,14 +174,16 @@
 				9E1805F9193ACEAC00037286 /* AppDelegate.h */,
 				9E1805FA193ACEAC00037286 /* AppDelegate.m */,
 				9E1805FC193ACEAC00037286 /* Main.storyboard */,
-				9E180602193ACEAC00037286 /* Images.xcassets */,
-				9E1805F1193ACEAC00037286 /* Supporting Files */,
 				9E18061F193AD21900037286 /* Splash.h */,
 				9E180620193AD21900037286 /* Splash.m */,
 				9E180622193AD24800037286 /* Map.h */,
 				9E180623193AD24800037286 /* Map.m */,
+				31A99E5B193B0F1A005C194D /* ParkingLotCell.h */,
+				31A99E5C193B0F1A005C194D /* ParkingLotCell.m */,
 				9E180625193AD2D500037286 /* Meter.h */,
 				9E180626193AD2D500037286 /* Meter.m */,
+				9E180602193ACEAC00037286 /* Images.xcassets */,
+				9E1805F1193ACEAC00037286 /* Supporting Files */,
 			);
 			path = prkng;
 			sourceTree = "<group>";
@@ -350,6 +355,7 @@
 				31A99E57193AE51E005C194D /* BeaconRegion.m in Sources */,
 				9E18063D193AE3F900037286 /* FSNConnection.m in Sources */,
 				9E18063C193AE3F900037286 /* FSN_categories.m in Sources */,
+				31A99E5D193B0F1A005C194D /* ParkingLotCell.m in Sources */,
 				31A99E56193AE51E005C194D /* iBeaconService.m in Sources */,
 				9E1805FB193ACEAC00037286 /* AppDelegate.m in Sources */,
 				9E180627193AD2D500037286 /* Meter.m in Sources */,
