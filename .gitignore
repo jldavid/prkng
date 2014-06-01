@@ -8,3 +8,7 @@
 
 
 code/Parkle.xcodeproj/project.xcworkspace/xcshareddata/Parkle.xccheckout
+
+*.xcuserstate
+
+code/prkng/Base.lproj/Main.storyboard
