@@ -8,7 +8,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _parkleButton.adjustsImageWhenHighlighted = NO;
+    //_parkleButton.adjustsImageWhenHighlighted = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -32,8 +32,10 @@
     [super didReceiveMemoryWarning];
 }
 
+/*
 - (IBAction)click:(id)sender {
     [self performSegueWithIdentifier:@"map" sender:self];
 }
+*/
 
 @end
