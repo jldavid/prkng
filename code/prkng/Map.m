@@ -2,6 +2,7 @@
 #import "FSNConnection.h"
 #import <CoreLocation/CoreLocation.h>
 #import "ParkingLotCell.h"
+#import "MKMapView+ZoomLevel.h"
 
 @interface Map ()
 
@@ -56,6 +57,61 @@
     [connection start];
     
     [self setupMapView];
+    
+// populate dummy data
+    
+    [self populateDummyData];
+}
+
+- (void)populateDummyData
+{
+    NSDictionary *p1 = @{@"address" : @"20 Charles Street",
+                         @"kilometersAway" : @"1.5",
+                         @"minutesAway" : @"7",
+                         @"remainingSpots" : @"420",
+                         @"rate" : @"$2.00 / Half Hour"};
+    
+    [self.nearbyParkingLots addObject:p1];
+    
+    NSDictionary *p2 = @{@"address" : @"13 Isabella Street",
+                         @"kilometersAway" : @"1.3",
+                         @"minutesAway" : @"6",
+                         @"remainingSpots" : @"10",
+                         @"rate" : @"$1.75 / Half Hour"};
+    
+    [self.nearbyParkingLots addObject:p2];
+    
+    NSDictionary *p3 = @{@"address" : @"15 Wellesley Street East",
+                         @"kilometersAway" : @"1.6",
+                         @"minutesAway" : @"9",
+                         @"remainingSpots" : @"101",
+                         @"rate" : @"$2.00 / Half Hour"};
+    
+    [self.nearbyParkingLots addObject:p3];
+    
+    NSDictionary *p4 = @{@"address" : @"37 Yorkville Avenue",
+                         @"kilometersAway" : @"1.9",
+                         @"minutesAway" : @"14",
+                         @"remainingSpots" : @"678",
+                         @"rate" : @"$2.00 / Half Hour"};
+    
+    [self.nearbyParkingLots addObject:p4];
+    
+    NSDictionary *p5 = @{@"address" : @"37 Queen Street East",
+                         @"kilometersAway" : @"1.1",
+                         @"minutesAway" : @"5",
+                         @"remainingSpots" : @"157",
+                         @"rate" : @"$2.25 / Half Hour"};
+    
+    [self.nearbyParkingLots addObject:p5];
+    
+    NSDictionary *p6 = @{@"address" : @"45 Bay Street",
+                         @"kilometersAway" : @"1.7",
+                         @"minutesAway" : @"9",
+                         @"remainingSpots" : @"19",
+                         @"rate" : @"$2.25 / Half Hour"};
+    
+    [self.nearbyParkingLots addObject:p6];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -77,18 +133,18 @@
     {
         //        NSLog(@"carparkDict = %@", carparkDict);
         
-        CLLocationCoordinate2D coord;
-        coord.latitude = [[carparkDict valueForKey:@"lat"] doubleValue];
-        coord.longitude = [[carparkDict valueForKey:@"lng"] doubleValue];
+        CLLocationCoordinate2D curCoord;
+        curCoord.latitude = [[carparkDict valueForKey:@"lat"] doubleValue];
+        curCoord.longitude = [[carparkDict valueForKey:@"lng"] doubleValue];
         
-        CLLocation *parkingLocation = [[CLLocation alloc] initWithLatitude:coord.latitude longitude:coord.longitude];
+        CLLocation *parkingLocation = [[CLLocation alloc] initWithLatitude:curCoord.latitude longitude:curCoord.longitude];
         
-        CLLocationDistance kilometers = [self.currentLocation distanceFromLocation:parkingLocation] / 1000;
+        CLLocationDistance kilometersAway = [self getKilometersAwayLocation1:self.currentLocation location2:parkingLocation];
         
-        if (kilometers < PARKING_RADIUS)
+        if (kilometersAway < PARKING_RADIUS)
         {
-            //            NSLog(@"greenP = %fKM", kilometers);
-            [self.nearbyParkingLots addObject:carparkDict];
+            //            NSLog(@"greenP = %fKM", kilometersAway);
+            //[self.nearbyParkingLots addObject:carparkDict];
         }
     }
     
@@ -96,6 +152,11 @@
     //    NSLog(@"nearbyParkingLots = %@", self.nearbyParkingLots);
     
     [self setupTableView];
+}
+
+- (CLLocationDistance)getKilometersAwayLocation1:(CLLocation *)location1 location2:(CLLocation *)location2
+{
+    return [location1 distanceFromLocation:location2] / 1000;
 }
 
 - (void)setupTableView
@@ -108,10 +169,19 @@
 
 - (void)setupMapView
 {
-    self.mapView.showsUserLocation = YES;
-    self.mapView.delegate = self;
-    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:YES];
-    self.mapView.mapType = MKMapTypeStandard;
+//    CLLocationCoordinate2D coordinate;
+//    coordinate.latitude = 43.6667;
+//    coordinate.longitude = -79.4167;
+//    
+//    self.mapView.showsUserLocation = YES;
+//    //self.mapView.delegate = self;
+//    
+//    [self.mapView setCenterCoordinate:coordinate zoomLevel:13 animated:NO];
+//    
+//    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:NO];
+//    self.mapView.mapType = MKMapTypeStandard;
+//    self.mapView.scrollEnabled = NO;
+//    self.mapView.rotateEnabled = NO;
 }
 
 /*
@@ -141,12 +211,27 @@
     ParkingLotCell *cell = (ParkingLotCell *)[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     NSDictionary *parkingDict = self.nearbyParkingLots[indexPath.row];
+
+    NSString *address = [parkingDict objectForKey:@"address"];
+    NSString *kmAway = [parkingDict objectForKey:@"kilometersAway"];
+    NSString *minutesAway = [parkingDict objectForKey:@"minutesAway"];
+    NSString *remainingSpots = [parkingDict objectForKey:@"remainingSpots"];
+    NSString *rate = [parkingDict objectForKey:@"rate"];
     
-    cell.lotIDLabel = [parkingDict objectForKey:@"id"];
-    cell.imageView.image = [UIImage imageNamed:@""];
-    cell.addressLabel = [parkingDict objectForKey:@"address"];
-    cell.lotDetailLabel = [parkingDict objectForKey:@"id"];
-    cell.rateLabel = [parkingDict objectForKey:@"id"];
+    cell.lotIDLabel.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
+    //cell.imageView.image = [UIImage imageNamed:@""];
+    cell.addressLabel.text = address;
+    
+//    CLLocationCoordinate2D curCoord;
+//    curCoord.latitude = [[parkingDict valueForKey:@"lat"] doubleValue];
+//    curCoord.longitude = [[parkingDict valueForKey:@"lng"] doubleValue];
+//    
+//    CLLocation *parkingLocation = [[CLLocation alloc] initWithLatitude:curCoord.latitude longitude:curCoord.longitude];
+//    CLLocationDistance kilometersAway = [self getKilometersAwayLocation1:self.currentLocation location2:parkingLocation];
+//    NSString *kmAwayString = [NSString stringWithFormat:@"%f", kilometersAway];
+    
+    cell.lotDetailLabel.text = [NSString stringWithFormat:@"%@ km  %@ mins  %@ %@", kmAway, minutesAway, remainingSpots, [remainingSpots intValue] == 1 ? @"spot" : @"spot"];
+    cell.rateLabel.text = rate;
     
     return cell;
 }
