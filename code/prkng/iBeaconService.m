@@ -144,9 +144,10 @@ static iBeaconService *_sharedInstance = nil;
     NSLog(@"Initializing CLLocationManager and initiating region monitoring...");
 }
 
-- (void)stopMonitoringForRegion:(CLBeaconRegion*)region {
+- (void)stopMonitoringForRegion
+{
     // stop monitoring for region
-    [self.locationManager stopMonitoringForRegion:region];
+    [self.locationManager stopMonitoringForRegion:[BeaconRegion targetRegion]];
 
     self.locationManager = nil;
     
@@ -232,9 +233,9 @@ static iBeaconService *_sharedInstance = nil;
 
         self.proximity = closestBeacon.accuracy;
        
-        if (closestBeacon.accuracy < .3 && closestBeacon.accuracy >= 0)
+        if (closestBeacon.accuracy < .07 && closestBeacon.accuracy >= 0)
             [self fireUpdateNotificationForStatus:@"kEnterRegion"];
-        else if (closestBeacon.accuracy > .3)
+        else if (closestBeacon.accuracy > .07)
             [self fireUpdateNotificationForStatus:@"kExitRegion"];
         else
             [self fireUpdateNotificationForStatus:@"kNone"];

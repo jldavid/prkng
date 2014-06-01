@@ -3,6 +3,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ParkingLotCell.h"
 #import "MKMapView+ZoomLevel.h"
+#import "iBeaconService.h"
 
 @interface Map ()
 
@@ -12,6 +13,10 @@
 @property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) NSMutableArray *nearbyParkingLots;
+
+@property (nonatomic, strong) UIAlertView *alertView;
+
+@property (nonatomic) BOOL userNotified;
 
 @end
 
@@ -44,6 +49,13 @@
                                        initWithImage:pinpoint style:0 target:nil action:nil];
     NSArray *actionButtonItemsTwo = @[pinpointItem];
     self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
+
+    [iBeaconService sharedManager];
+    
+    self.userNotified = NO;
+    
+    [iBeaconService sharedManager].ableToShowEnteranceNotifier = YES;
+/*
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", @"http://www1.toronto.ca", @"/City_Of_Toronto/Information_&_Technology/Open_Data/Data_Sets/Assets/Files/greenPParking.json"]];
     
@@ -74,6 +86,8 @@
     //[connection start];
     
     [self setupMapView];
+ 
+ */
     
 // populate dummy data
     
@@ -143,6 +157,63 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    // add observer for location notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRegionUpdate:)
+                                                 name:@"kRegionUpdateNotification"
+                                               object:nil];
+    
+    
+    
+	self.alertView = [[UIAlertView alloc] initWithTitle:@"You found a spot"
+                                                        message:@"Parkle has detected that you have parked your vehicle in spot B52 . You time of entry is 0:00pm and if you Accept, you will begin to be charged a rate of $2.00 per hour."
+                                                       delegate:self
+                                              cancelButtonTitle:@"Decline"
+                                      otherButtonTitles:@"Accept", nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kRegionUpdateNotification" object:nil];
+    
+    [self performSegueWithIdentifier:@"meter" sender:self];    
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:YES];
+    
+    self.userNotified = NO;
+}
+
+- (void)handleRegionUpdate:(NSNotification *)notification {
+    
+    NSString *regionStatus = (NSString *)notification.userInfo[@"status"];
+    
+    if ([regionStatus isEqualToString:@"kEnterRegion"])
+    {
+        NSLog(@"kEnterRegion");
+        
+        if ([iBeaconService sharedManager].ableToShowEnteranceNotifier == YES)
+        {
+            [self.alertView show];
+            [iBeaconService sharedManager].ableToShowEnteranceNotifier = NO;
+        }
+    }
+    else if ([regionStatus isEqualToString:@"kExitRegion"])
+    {
+        NSLog(@"kExitRegion");
+        
+//        [iBeaconService sharedManager].ableToShowEnteranceNotifier = YES;
+    }
+    
+    NSLog(@"%@", notification.userInfo[@"status"]);
 }
 
 - (void)parseJSON

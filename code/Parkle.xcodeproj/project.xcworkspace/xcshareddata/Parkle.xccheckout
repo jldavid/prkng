@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>23B5C02D-E5A5-49D5-B0F6-3220180EA364</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Parkle</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>54E2950F-5957-4D3A-8F7A-D97C7A4CD830</key>
+		<string>https://github.com/jldavid/prkng.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>code/Parkle.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>54E2950F-5957-4D3A-8F7A-D97C7A4CD830</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jldavid/prkng.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>54E2950F-5957-4D3A-8F7A-D97C7A4CD830</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>54E2950F-5957-4D3A-8F7A-D97C7A4CD830</string>
+			<key>IDESourceControlWCCName</key>
+			<string>prkng</string>
+		</dict>
+	</array>
+</dict>
+</plist>
