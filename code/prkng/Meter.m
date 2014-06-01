@@ -5,14 +5,25 @@
 
 @implementation Meter
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:9.0/255.0 green:90.0/255.0 blue:187.0/255.0 alpha:0.8]];
+    
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x095ABB)];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title.png"]];
+    
+    UIBarButtonItem *trashItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
+    NSArray *actionButtonItems = @[trashItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+}
 
-    //[[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:21.0/255.0 green:194.0/255.0 blue:179.0/255.0 alpha:0.5]];
-    // Do any additional setup after loading the view.
+-(UIStatusBarStyle)preferredStatusBarStyle
+{
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning
@@ -21,8 +32,5 @@
     // Dispose of any resources that can be recreated.
 }
 
--(UIStatusBarStyle)preferredStatusBarStyle{
-    return UIStatusBarStyleLightContent;
-}
 
 @end
