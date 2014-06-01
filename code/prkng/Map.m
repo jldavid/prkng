@@ -20,7 +20,7 @@
                                             }
                                        completionBlock:^(FSNConnection *c) {
                                            NSLog(@"complete: %@\n  error: %@\n  parseResult: %@\n", c, c.error, c.parseResult);
-                                           NSError *error = nil;
+                                           //NSError *error = nil;
                                            //NSDictionary *json = [NSJSONSerialization JSONObjectWithData:c.responseData options:kNilOptions error:&error];
                                            //NSString *token = [json objectForKey:@"token"];
                                            //NSLog(@"Token: %@", token);

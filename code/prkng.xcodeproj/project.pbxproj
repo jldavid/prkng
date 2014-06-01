@@ -30,6 +30,7 @@
 		9E18063C193AE3F900037286 /* FSN_categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180637193AE3F900037286 /* FSN_categories.m */; };
 		9E18063D193AE3F900037286 /* FSNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180639193AE3F900037286 /* FSNConnection.m */; };
 		9E18063E193AE3F900037286 /* FSNData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E18063B193AE3F900037286 /* FSNData.m */; };
+		9EA86530193AEC4A003A7F10 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,12 @@
 		9E180639193AE3F900037286 /* FSNConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNConnection.m; sourceTree = "<group>"; };
 		9E18063A193AE3F900037286 /* FSNData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNData.h; sourceTree = "<group>"; };
 		9E18063B193AE3F900037286 /* FSNData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNData.m; sourceTree = "<group>"; };
+		9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
+		9EA8652B193AEC4A003A7F10 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
+		9EA8652C193AEC4A003A7F10 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
+		9EA8652D193AEC4A003A7F10 /* PayPalMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalMobile.h; sourceTree = "<group>"; };
+		9EA8652E193AEC4A003A7F10 /* PayPalPayment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPayment.h; sourceTree = "<group>"; };
+		9EA8652F193AEC4A003A7F10 /* PayPalPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalPaymentViewController.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9EA86530193AEC4A003A7F10 /* libPayPalMobile.a in Frameworks */,
 				9E18062B193ADD8400037286 /* CoreLocation.framework in Frameworks */,
 				9E180629193ADD7E00037286 /* MapKit.framework in Frameworks */,
 				9E1805ED193ACEAC00037286 /* CoreGraphics.framework in Frameworks */,
@@ -152,6 +160,7 @@
 		9E1805F0193ACEAC00037286 /* prkng */ = {
 			isa = PBXGroup;
 			children = (
+				9EA86529193AEC1A003A7F10 /* PayPalMobile */,
 				31A99E51193AE50E005C194D /* iBeaconService */,
 				9E180635193AE28600037286 /* Libraries */,
 				9E1805F9193ACEAC00037286 /* AppDelegate.h */,
@@ -209,6 +218,19 @@
 				9E18063B193AE3F900037286 /* FSNData.m */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		9EA86529193AEC1A003A7F10 /* PayPalMobile */ = {
+			isa = PBXGroup;
+			children = (
+				9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */,
+				9EA8652B193AEC4A003A7F10 /* PayPalConfiguration.h */,
+				9EA8652C193AEC4A003A7F10 /* PayPalFuturePaymentViewController.h */,
+				9EA8652D193AEC4A003A7F10 /* PayPalMobile.h */,
+				9EA8652E193AEC4A003A7F10 /* PayPalPayment.h */,
+				9EA8652F193AEC4A003A7F10 /* PayPalPaymentViewController.h */,
+			);
+			name = PayPalMobile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -445,6 +467,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prkng/prkng-Prefix.pch";
 				INFOPLIST_FILE = "prkng/prkng-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/prkng",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -458,6 +484,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prkng/prkng-Prefix.pch";
 				INFOPLIST_FILE = "prkng/prkng-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/prkng",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
