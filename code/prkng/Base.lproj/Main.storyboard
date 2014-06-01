@@ -138,6 +138,47 @@
             </objects>
             <point key="canvasLocation" x="530" y="-43"/>
         </scene>
+        <!--End Meter - End Meter-->
+        <scene sceneID="C2C-DK-KcB">
+            <objects>
+                <viewController id="hgu-ko-UKm" customClass="EndMeter" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4f2-hO-Ks2"/>
+                        <viewControllerLayoutGuide type="bottom" id="irg-cf-rsr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S6x-NA-kFc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="End Meter" id="Z7H-go-Bpc"/>
+                    <connections>
+                        <segue destination="Q0i-AN-3hP" kind="push" identifier="inspector" id="6cf-7N-pXR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fP2-nL-Fhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1314" y="-48"/>
+        </scene>
+        <!--Inspector - Inspector-->
+        <scene sceneID="Yfn-cf-Otg">
+            <objects>
+                <viewController id="Q0i-AN-3hP" customClass="Inspector" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K01-Jl-jNg"/>
+                        <viewControllerLayoutGuide type="bottom" id="MH6-f0-0yf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sYz-fY-jLd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Inspector" id="vyP-mc-mT5"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gga-mt-l7M" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1698" y="-48"/>
+        </scene>
         <!--Meter - Meter-->
         <scene sceneID="SdQ-gM-Nt3">
             <objects>
@@ -151,7 +192,10 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Meter Status" id="YfU-7Y-Y4P"/>
+                    <navigationItem key="navigationItem" title="Start Meter" id="YfU-7Y-Y4P"/>
+                    <connections>
+                        <segue destination="hgu-ko-UKm" kind="push" identifier="endmeter" id="q7R-gA-iAc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aiX-UG-nyO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -173,7 +217,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEu-rU-vAC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-287" y="-43"/>
+            <point key="canvasLocation" x="-295" y="-29"/>
         </scene>
     </scenes>
     <resources>

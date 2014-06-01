@@ -1,9 +1,9 @@
-#import "Meter.h"
+#import "EndMeter.h"
 
-@interface Meter ()
+@interface EndMeter ()
 @end
 
-@implementation Meter
+@implementation EndMeter
 
 - (void)viewDidLoad
 {

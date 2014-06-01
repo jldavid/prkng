@@ -1,9 +1,19 @@
-#import "Meter.h"
+#import "Inspector.h"
 
-@interface Meter ()
+@interface Inspector ()
+
 @end
 
-@implementation Meter
+@implementation Inspector
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self) {
+        // Custom initialization
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {

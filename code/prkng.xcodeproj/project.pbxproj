@@ -33,6 +33,8 @@
 		9E18063E193AE3F900037286 /* FSNData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E18063B193AE3F900037286 /* FSNData.m */; };
 		9E52FC46193AFDFC007F1774 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC44193AFDFC007F1774 /* splash.png */; };
 		9E52FC47193AFDFC007F1774 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC45193AFDFC007F1774 /* splash@2x.png */; };
+		9E52FC4A193B18B0007F1774 /* EndMeter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E52FC49193B18B0007F1774 /* EndMeter.m */; };
+		9E52FC4D193B193C007F1774 /* Inspector.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E52FC4C193B193C007F1774 /* Inspector.m */; };
 		9EA86530193AEC4A003A7F10 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */; };
 /* End PBXBuildFile section */
 
@@ -86,6 +88,10 @@
 		9E18063B193AE3F900037286 /* FSNData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNData.m; sourceTree = "<group>"; };
 		9E52FC44193AFDFC007F1774 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		9E52FC45193AFDFC007F1774 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
+		9E52FC48193B18B0007F1774 /* EndMeter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndMeter.h; sourceTree = "<group>"; };
+		9E52FC49193B18B0007F1774 /* EndMeter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndMeter.m; sourceTree = "<group>"; };
+		9E52FC4B193B193C007F1774 /* Inspector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Inspector.h; sourceTree = "<group>"; };
+		9E52FC4C193B193C007F1774 /* Inspector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Inspector.m; sourceTree = "<group>"; };
 		9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
 		9EA8652B193AEC4A003A7F10 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
 		9EA8652C193AEC4A003A7F10 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
@@ -184,6 +190,10 @@
 				9E180626193AD2D500037286 /* Meter.m */,
 				9E180602193ACEAC00037286 /* Images.xcassets */,
 				9E1805F1193ACEAC00037286 /* Supporting Files */,
+				9E52FC48193B18B0007F1774 /* EndMeter.h */,
+				9E52FC49193B18B0007F1774 /* EndMeter.m */,
+				9E52FC4B193B193C007F1774 /* Inspector.h */,
+				9E52FC4C193B193C007F1774 /* Inspector.m */,
 			);
 			path = prkng;
 			sourceTree = "<group>";
@@ -356,9 +366,11 @@
 				9E18063D193AE3F900037286 /* FSNConnection.m in Sources */,
 				9E18063C193AE3F900037286 /* FSN_categories.m in Sources */,
 				31A99E5D193B0F1A005C194D /* ParkingLotCell.m in Sources */,
+				9E52FC4A193B18B0007F1774 /* EndMeter.m in Sources */,
 				31A99E56193AE51E005C194D /* iBeaconService.m in Sources */,
 				9E1805FB193ACEAC00037286 /* AppDelegate.m in Sources */,
 				9E180627193AD2D500037286 /* Meter.m in Sources */,
+				9E52FC4D193B193C007F1774 /* Inspector.m in Sources */,
 				9E18063E193AE3F900037286 /* FSNData.m in Sources */,
 				9E180621193AD21900037286 /* Splash.m in Sources */,
 				9E1805F7193ACEAC00037286 /* main.m in Sources */,
