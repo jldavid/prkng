@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9E1805E6193ACEAC00037286"
-               BuildableName = "prkng.app"
+               BuildableName = "Parkle.app"
                BlueprintName = "Parkle"
                ReferencedContainer = "container:Parkle.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9E180607193ACEAC00037286"
-               BuildableName = "prkngTests.xctest"
+               BuildableName = "ParkleTests.xctest"
                BlueprintName = "ParkleTests"
                ReferencedContainer = "container:Parkle.xcodeproj">
             </BuildableReference>
@@ -43,7 +43,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E1805E6193ACEAC00037286"
-            BuildableName = "prkng.app"
+            BuildableName = "Parkle.app"
             BlueprintName = "Parkle"
             ReferencedContainer = "container:Parkle.xcodeproj">
          </BuildableReference>
@@ -62,7 +62,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E1805E6193ACEAC00037286"
-            BuildableName = "prkng.app"
+            BuildableName = "Parkle.app"
             BlueprintName = "Parkle"
             ReferencedContainer = "container:Parkle.xcodeproj">
          </BuildableReference>
@@ -80,7 +80,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9E1805E6193ACEAC00037286"
-            BuildableName = "prkng.app"
+            BuildableName = "Parkle.app"
             BlueprintName = "Parkle"
             ReferencedContainer = "container:Parkle.xcodeproj">
          </BuildableReference>

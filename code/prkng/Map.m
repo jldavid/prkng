@@ -40,13 +40,13 @@
     
     UIImage *disclosure = [UIImage imageNamed:@"disclosure.png"];
     UIBarButtonItem *disclosureItem = [[UIBarButtonItem alloc]
-                                       initWithImage:disclosure style:0 target:nil action:nil];
+                                       initWithImage:disclosure style:0 target:self action:@selector(gback)];
     NSArray *actionButtonItems = @[disclosureItem];
     self.navigationItem.leftBarButtonItems = actionButtonItems;
     
     UIImage *pinpoint = [UIImage imageNamed:@"pinpoint.png"];
     UIBarButtonItem *pinpointItem = [[UIBarButtonItem alloc]
-                                       initWithImage:pinpoint style:0 target:nil action:nil];
+                                       initWithImage:pinpoint style:0 target:self action:@selector(gforth)];
     NSArray *actionButtonItemsTwo = @[pinpointItem];
     self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
 
@@ -98,6 +98,14 @@
 //        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
 //            NSLog(@" %@", name); }
 //    }
+}
+
+-(void) gback {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void) gforth {
+    [self performSegueWithIdentifier:@"meter" sender:self];
 }
 
 - (void)populateDummyData

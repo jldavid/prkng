@@ -141,6 +141,7 @@
                     <connections>
                         <outlet property="tableView" destination="aSm-Lo-95B" id="VlU-Rp-NtT"/>
                         <segue destination="xjO-FT-WYb" kind="push" identifier="meter" id="VtQ-4W-z0l"/>
+                        <segue destination="vXZ-lx-hvc" kind="push" identifier="splash" id="9zD-V4-daE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kbP-km-mMj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -158,6 +159,12 @@
                     <view key="view" contentMode="scaleToFill" id="S6x-NA-kFc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greypoupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-2b-0xO">
+                                <rect key="frame" x="-9" y="-8" width="338" height="576"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="End Meter" id="Z7H-go-Bpc"/>
@@ -188,7 +195,7 @@
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="93" id="zzU-Nc-Fbp" customClass="InspectorParkingLotCell">
-                                        <rect key="frame" x="0.0" y="86" width="320" height="93"/>
+                                        <rect key="frame" x="0.0" y="22" width="320" height="93"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zzU-Nc-Fbp" id="MBx-nC-tXQ">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="92"/>
@@ -262,6 +269,12 @@
                     <view key="view" contentMode="scaleToFill" id="xcL-07-s5g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greypoupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8XU-R9-BHq">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Start Meter" id="YfU-7Y-Y4P"/>
@@ -293,6 +306,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="greypoupon.png" width="320" height="568"/>
         <image name="idBG" width="35" height="35"/>
         <image name="mapView" width="320" height="222"/>
         <image name="splash.png" width="320" height="568"/>
@@ -302,4 +316,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="9zD-V4-daE"/>
+    </inferredMetricsTieBreakers>
 </document>
