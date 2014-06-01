@@ -23,10 +23,10 @@
 {
     [super viewDidLoad];
     
-    self.locationManager.delegate = self;
-    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    //self.locationManager.delegate = self;
+    //self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
-    [self.locationManager startUpdatingLocation];
+    //[self.locationManager startUpdatingLocation];
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", @"http://www1.toronto.ca", @"/City_Of_Toronto/Information_&_Technology/Open_Data/Data_Sets/Assets/Files/greenPParking.json"]];
     
@@ -54,13 +54,19 @@
                                          progressBlock:^(FSNConnection *c) {
                                              //NSLog(@"progress: %@: %.2f", c, c.uploadProgress);
                                          }];
-    [connection start];
+    //[connection start];
     
     [self setupMapView];
     
 // populate dummy data
     
     [self populateDummyData];
+    
+//    for (NSString* family in [UIFont familyNames]) {
+//        NSLog(@"%@", family);
+//        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
+//            NSLog(@" %@", name); }
+//    }
 }
 
 - (void)populateDummyData
@@ -68,50 +74,52 @@
     NSDictionary *p1 = @{@"address" : @"20 Charles Street",
                          @"kilometersAway" : @"1.5",
                          @"minutesAway" : @"7",
-                         @"remainingSpots" : @"420",
-                         @"rate" : @"$2.00 / Half Hour"};
+                         @"remainingSpots" : @"40",
+                         @"rate" : @"$4.00 /hr"};
     
     [self.nearbyParkingLots addObject:p1];
     
     NSDictionary *p2 = @{@"address" : @"13 Isabella Street",
                          @"kilometersAway" : @"1.3",
                          @"minutesAway" : @"6",
-                         @"remainingSpots" : @"10",
-                         @"rate" : @"$1.75 / Half Hour"};
+                         @"remainingSpots" : @"12",
+                         @"rate" : @"$3.50 /hr"};
     
     [self.nearbyParkingLots addObject:p2];
     
     NSDictionary *p3 = @{@"address" : @"15 Wellesley Street East",
                          @"kilometersAway" : @"1.6",
                          @"minutesAway" : @"9",
-                         @"remainingSpots" : @"101",
-                         @"rate" : @"$2.00 / Half Hour"};
+                         @"remainingSpots" : @"3",
+                         @"rate" : @"$4.00 /hr"};
     
     [self.nearbyParkingLots addObject:p3];
     
     NSDictionary *p4 = @{@"address" : @"37 Yorkville Avenue",
                          @"kilometersAway" : @"1.9",
                          @"minutesAway" : @"14",
-                         @"remainingSpots" : @"678",
-                         @"rate" : @"$2.00 / Half Hour"};
+                         @"remainingSpots" : @"62",
+                         @"rate" : @"$4.00 /hr"};
     
     [self.nearbyParkingLots addObject:p4];
     
-    NSDictionary *p5 = @{@"address" : @"37 Queen Street East",
-                         @"kilometersAway" : @"1.1",
-                         @"minutesAway" : @"5",
-                         @"remainingSpots" : @"157",
-                         @"rate" : @"$2.25 / Half Hour"};
+//    NSDictionary *p5 = @{@"address" : @"37 Queen Street East",
+//                         @"kilometersAway" : @"1.1",
+//                         @"minutesAway" : @"5",
+//                         @"remainingSpots" : @"157",
+//                         @"rate" : @"$4.50 /hr"};
+//    
+//    [self.nearbyParkingLots addObject:p5];
+//    
+//    NSDictionary *p6 = @{@"address" : @"45 Bay Street",
+//                         @"kilometersAway" : @"1.7",
+//                         @"minutesAway" : @"9",
+//                         @"remainingSpots" : @"19",
+//                         @"rate" : @"$4.50 /hr"};
+//    
+//    [self.nearbyParkingLots addObject:p6];
     
-    [self.nearbyParkingLots addObject:p5];
-    
-    NSDictionary *p6 = @{@"address" : @"45 Bay Street",
-                         @"kilometersAway" : @"1.7",
-                         @"minutesAway" : @"9",
-                         @"remainingSpots" : @"19",
-                         @"rate" : @"$2.25 / Half Hour"};
-    
-    [self.nearbyParkingLots addObject:p6];
+    [self setupTableView];
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -151,7 +159,7 @@
     //    NSLog(@"total nearbyParkingLots = %d", self.nearbyParkingLots.count);
     //    NSLog(@"nearbyParkingLots = %@", self.nearbyParkingLots);
     
-    [self setupTableView];
+    //[self setupTableView];
 }
 
 - (CLLocationDistance)getKilometersAwayLocation1:(CLLocation *)location1 location2:(CLLocation *)location2
@@ -165,6 +173,10 @@
     self.tableView.dataSource = self;
     
     [self.tableView reloadData];
+    
+    self.tableView.backgroundColor = [UIColor colorWithRed:34.0f/255.0f
+                                                     green:34.0f/255.0f
+                                                      blue:34.0f/255.0f alpha:1];
 }
 
 - (void)setupMapView
@@ -218,8 +230,13 @@
     NSString *remainingSpots = [parkingDict objectForKey:@"remainingSpots"];
     NSString *rate = [parkingDict objectForKey:@"rate"];
     
+    cell.accessoryView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"disclosureInd.png"]];
+    
+    cell.lotIDLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:17];
     cell.lotIDLabel.text = [NSString stringWithFormat:@"%d", indexPath.row + 1];
     //cell.imageView.image = [UIImage imageNamed:@""];
+    
+    cell.addressLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:19];
     cell.addressLabel.text = address;
     
 //    CLLocationCoordinate2D curCoord;
@@ -230,7 +247,10 @@
 //    CLLocationDistance kilometersAway = [self getKilometersAwayLocation1:self.currentLocation location2:parkingLocation];
 //    NSString *kmAwayString = [NSString stringWithFormat:@"%f", kilometersAway];
     
+    cell.lotDetailLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:14];
     cell.lotDetailLabel.text = [NSString stringWithFormat:@"%@ km  %@ mins  %@ %@", kmAway, minutesAway, remainingSpots, [remainingSpots intValue] == 1 ? @"spot" : @"spot"];
+    
+    cell.rateLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:25];
     cell.rateLabel.text = rate;
     
     return cell;
@@ -252,7 +272,7 @@
     {
         self.currentLocation = newLocation;
         
-        [self parseJSON];
+        //[self parseJSON];
     }
 }
 
