@@ -159,6 +159,12 @@
                     <view key="view" contentMode="scaleToFill" id="S6x-NA-kFc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greypoupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-2b-0xO">
+                                <rect key="frame" x="-9" y="-8" width="338" height="576"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="End Meter" id="Z7H-go-Bpc"/>
@@ -263,6 +269,12 @@
                     <view key="view" contentMode="scaleToFill" id="xcL-07-s5g">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greypoupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8XU-R9-BHq">
+                                <rect key="frame" x="0.0" y="0.0" width="326" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Start Meter" id="YfU-7Y-Y4P"/>
@@ -294,6 +306,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="greypoupon.png" width="320" height="568"/>
         <image name="idBG" width="35" height="35"/>
         <image name="mapView" width="320" height="222"/>
         <image name="splash.png" width="320" height="568"/>

@@ -21,7 +21,7 @@
     NSArray *actionButtonItems = @[disclosureItem];
     self.navigationItem.leftBarButtonItems = actionButtonItems;
     
-    UIImage *pinpoint = [UIImage imageNamed:@"pinpoint.png"];
+    UIImage *pinpoint = [UIImage imageNamed:@"shield.png"];
     UIBarButtonItem *pinpointItem = [[UIBarButtonItem alloc]
                                      initWithImage:pinpoint style:0 target:self action:@selector(gforth)];
     NSArray *actionButtonItemsTwo = @[pinpointItem];
