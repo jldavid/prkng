@@ -12,13 +12,29 @@
 {
     [super viewDidLoad];
     
-    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x095ABB)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title.png"]];
     
-    UIBarButtonItem *trashItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:nil];
-    NSArray *actionButtonItems = @[trashItem];
-    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    UIImage *disclosure = [UIImage imageNamed:@"disclosure.png"];
+    UIBarButtonItem *disclosureItem = [[UIBarButtonItem alloc]
+                                       initWithImage:disclosure style:0 target:self action:@selector(gback)];
+    NSArray *actionButtonItems = @[disclosureItem];
+    self.navigationItem.leftBarButtonItems = actionButtonItems;
+    
+    UIImage *pinpoint = [UIImage imageNamed:@"pinpoint.png"];
+    UIBarButtonItem *pinpointItem = [[UIBarButtonItem alloc]
+                                     initWithImage:pinpoint style:0 target:self action:@selector(gforth)];
+    NSArray *actionButtonItemsTwo = @[pinpointItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
+}
+
+-(void) gback {
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void) gforth {
+    [self performSegueWithIdentifier:@"endmeter" sender:self];
 }
 
 -(UIStatusBarStyle)preferredStatusBarStyle
