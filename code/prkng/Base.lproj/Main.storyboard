@@ -13,7 +13,7 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e18-BT-8Sj">
@@ -55,15 +55,15 @@
                         <viewControllerLayoutGuide type="bottom" id="lMh-Fh-ihV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0Uj-7n-qAA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mapView" translatesAutoresizingMaskIntoConstraints="NO" id="wbk-Hn-3ku">
-                                <rect key="frame" x="0.0" y="64" width="320" height="222"/>
+                                <rect key="frame" x="0.0" y="60" width="321" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="aSm-Lo-95B">
-                                <rect key="frame" x="0.0" y="286" width="320" height="282"/>
+                                <rect key="frame" x="0.0" y="228" width="320" height="252"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -157,11 +157,11 @@
                         <viewControllerLayoutGuide type="bottom" id="irg-cf-rsr"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="S6x-NA-kFc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greypoupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="GGz-2b-0xO">
-                                <rect key="frame" x="-9" y="-8" width="338" height="576"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="runningMeter" translatesAutoresizingMaskIntoConstraints="NO" id="uF2-zX-XFm">
+                                <rect key="frame" x="0.0" y="63" width="320" height="417"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
                         </subviews>
@@ -174,7 +174,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fP2-nL-Fhn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1314" y="-48"/>
+            <point key="canvasLocation" x="1310" y="-48"/>
         </scene>
         <!--Inspector - Inspector-->
         <scene sceneID="Yfn-cf-Otg">
@@ -185,11 +185,11 @@
                         <viewControllerLayoutGuide type="bottom" id="MH6-f0-0yf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sYz-fY-jLd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="93" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="kVu-eW-QjR">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -266,7 +266,7 @@
                         <viewControllerLayoutGuide type="bottom" id="cq3-jt-yxA"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="xcL-07-s5g">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="greypoupon.png" translatesAutoresizingMaskIntoConstraints="NO" id="8XU-R9-BHq">
@@ -315,15 +315,16 @@
     <resources>
         <image name="greypoupon.png" width="320" height="568"/>
         <image name="idBG" width="35" height="35"/>
-        <image name="mapView" width="320" height="222"/>
+        <image name="mapView" width="320" height="167"/>
         <image name="meter.png" width="246" height="91"/>
+        <image name="runningMeter" width="320" height="416"/>
         <image name="splash.png" width="320" height="568"/>
         <image name="youspot.png" width="184" height="81"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="9zD-V4-daE"/>

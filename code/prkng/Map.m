@@ -111,10 +111,10 @@
 - (void)populateDummyData
 {
     NSDictionary *p1 = @{@"address" : @"20 Charles Street",
-                         @"kilometersAway" : @"1.5",
-                         @"minutesAway" : @"7",
+                         @"kilometersAway" : @"0",
+                         @"minutesAway" : @"0",
                          @"remainingSpots" : @"40",
-                         @"rate" : @"$4.00 /hr"};
+                         @"rate" : @"$10.00 /hr"};
     
     [self.nearbyParkingLots addObject:p1];
     
@@ -122,7 +122,7 @@
                          @"kilometersAway" : @"1.3",
                          @"minutesAway" : @"6",
                          @"remainingSpots" : @"12",
-                         @"rate" : @"$3.50 /hr"};
+                         @"rate" : @"$4.50 /hr"};
     
     [self.nearbyParkingLots addObject:p2];
     
@@ -130,7 +130,7 @@
                          @"kilometersAway" : @"1.6",
                          @"minutesAway" : @"9",
                          @"remainingSpots" : @"3",
-                         @"rate" : @"$4.00 /hr"};
+                         @"rate" : @"$8.00 /hr"};
     
     [self.nearbyParkingLots addObject:p3];
     
@@ -138,7 +138,7 @@
                          @"kilometersAway" : @"1.9",
                          @"minutesAway" : @"14",
                          @"remainingSpots" : @"62",
-                         @"rate" : @"$4.00 /hr"};
+                         @"rate" : @"$15.00 /hr"};
     
     [self.nearbyParkingLots addObject:p4];
     
@@ -179,8 +179,8 @@
     
     
     
-	self.alertView = [[UIAlertView alloc] initWithTitle:@"You found a spot"
-                                                message:@"Parkle has detected that you have parked your vehicle in spot B52 . You time of entry is 0:00pm and if you Accept, you will begin to be charged a rate of $2.00 per hour."
+	self.alertView = [[UIAlertView alloc] initWithTitle:@"You have parked!"
+                                                message:@"You have parked in spot B52.\nYour PayPal account will be charged $2/hr."
                                                delegate:self
                                       cancelButtonTitle:@"Decline"
                                       otherButtonTitles:@"Accept", nil];

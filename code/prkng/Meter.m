@@ -60,11 +60,11 @@
     
     
     
-	self.alertView = [[UIAlertView alloc] initWithTitle:@"Back so soon?"
-                                                message:@"Parkle has detected that you have returned to your vehicle after 75 minutes. Total charges are $6.00. Do you wish to stayed parked?"
+	self.alertView = [[UIAlertView alloc] initWithTitle:@"Welcome Back!"
+                                                message:@"Your balance for this parking spot is $6.40.\nAre you ready to leave and end this transaction?"
                                                delegate:self
-                                      cancelButtonTitle:@"No I'm Done"
-                                      otherButtonTitles:@"Yes I'm Staying", nil];
+                                      cancelButtonTitle:@"Yes, I'm Leaving"
+                                      otherButtonTitles:@"No, I'm Staying", nil];
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex

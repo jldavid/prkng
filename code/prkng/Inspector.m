@@ -33,41 +33,11 @@
 
 - (void)populateDummyData
 {
-    NSDictionary *p1 = @{@"spotStatus" : @"Spot J7 is Vacant",
-                         @"elapsedTime" : @"1 min ago",
-                         @"hoursStayed" : @"2 hours stayed"};
+    NSDictionary *p1 = @{@"spotStatus" : @"Spot A7 is Vacant",
+                         @"elapsedTime" : @"10 sec ago",
+                         @"hoursStayed" : @"30 seconds stayed"};
     
     [self.parkingLots addObject:p1];
-    
-    NSDictionary *p2 = @{@"spotStatus" : @"Spot J7 is Vacant",
-                         @"elapsedTime" : @"1 min ago",
-                         @"hoursStayed" : @"2 hours stayed"};
-    
-    [self.parkingLots addObject:p2];
-    
-    NSDictionary *p3 = @{@"spotStatus" : @"Spot J7 is Vacant",
-                         @"elapsedTime" : @"1 min ago",
-                         @"hoursStayed" : @"2 hours stayed"};
-    
-    [self.parkingLots addObject:p3];
-    
-    NSDictionary *p4 = @{@"spotStatus" : @"Spot J7 is Vacant",
-                         @"elapsedTime" : @"1 min ago",
-                         @"hoursStayed" : @"2 hours stayed"};
-    
-    [self.parkingLots addObject:p4];
-    
-    NSDictionary *p5 = @{@"spotStatus" : @"Spot J7 is Vacant",
-                         @"elapsedTime" : @"1 min ago",
-                         @"hoursStayed" : @"2 hours stayed"};
-
-    [self.parkingLots addObject:p5];
-
-    NSDictionary *p6 = @{@"spotStatus" : @"Spot J7 is Vacant",
-                         @"elapsedTime" : @"1 min ago",
-                         @"hoursStayed" : @"2 hours stayed"};
-
-    [self.parkingLots addObject:p6];
     
     [self setupTableView];
 }

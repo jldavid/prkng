@@ -233,7 +233,7 @@ static iBeaconService *_sharedInstance = nil;
         
         self.proximity = closestBeacon.accuracy;
         
-        CGFloat radius = .3;
+        CGFloat radius = .07;
         
         if (closestBeacon.accuracy < radius && closestBeacon.accuracy >= 0)
             [self fireUpdateNotificationForStatus:@"kEnterRegion"];
