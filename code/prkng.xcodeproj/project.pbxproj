@@ -25,9 +25,9 @@
 		9E180627193AD2D500037286 /* Meter.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180626193AD2D500037286 /* Meter.m */; };
 		9E180629193ADD7E00037286 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E180628193ADD7E00037286 /* MapKit.framework */; };
 		9E18062B193ADD8400037286 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E18062A193ADD8400037286 /* CoreLocation.framework */; };
-		9E180632193AE27E00037286 /* FSN_categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E18062D193AE27E00037286 /* FSN_categories.m */; };
-		9E180633193AE27E00037286 /* FSNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E18062F193AE27E00037286 /* FSNConnection.m */; };
-		9E180634193AE27E00037286 /* FSNData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180631193AE27E00037286 /* FSNData.m */; };
+		9E18063C193AE3F900037286 /* FSN_categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180637193AE3F900037286 /* FSN_categories.m */; };
+		9E18063D193AE3F900037286 /* FSNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180639193AE3F900037286 /* FSNConnection.m */; };
+		9E18063E193AE3F900037286 /* FSNData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E18063B193AE3F900037286 /* FSNData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,12 +66,12 @@
 		9E180626193AD2D500037286 /* Meter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Meter.m; sourceTree = "<group>"; };
 		9E180628193ADD7E00037286 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		9E18062A193ADD8400037286 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		9E18062C193AE27E00037286 /* FSN_categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSN_categories.h; path = ../../FSN_categories.h; sourceTree = "<group>"; };
-		9E18062D193AE27E00037286 /* FSN_categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSN_categories.m; path = ../../FSN_categories.m; sourceTree = "<group>"; };
-		9E18062E193AE27E00037286 /* FSNConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSNConnection.h; path = ../../FSNConnection.h; sourceTree = "<group>"; };
-		9E18062F193AE27E00037286 /* FSNConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSNConnection.m; path = ../../FSNConnection.m; sourceTree = "<group>"; };
-		9E180630193AE27E00037286 /* FSNData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FSNData.h; path = ../../FSNData.h; sourceTree = "<group>"; };
-		9E180631193AE27E00037286 /* FSNData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FSNData.m; path = ../../FSNData.m; sourceTree = "<group>"; };
+		9E180636193AE3F900037286 /* FSN_categories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSN_categories.h; sourceTree = "<group>"; };
+		9E180637193AE3F900037286 /* FSN_categories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSN_categories.m; sourceTree = "<group>"; };
+		9E180638193AE3F900037286 /* FSNConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNConnection.h; sourceTree = "<group>"; };
+		9E180639193AE3F900037286 /* FSNConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNConnection.m; sourceTree = "<group>"; };
+		9E18063A193AE3F900037286 /* FSNData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNData.h; sourceTree = "<group>"; };
+		9E18063B193AE3F900037286 /* FSNData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,12 +183,12 @@
 		9E180635193AE28600037286 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				9E18062C193AE27E00037286 /* FSN_categories.h */,
-				9E18062D193AE27E00037286 /* FSN_categories.m */,
-				9E18062E193AE27E00037286 /* FSNConnection.h */,
-				9E18062F193AE27E00037286 /* FSNConnection.m */,
-				9E180630193AE27E00037286 /* FSNData.h */,
-				9E180631193AE27E00037286 /* FSNData.m */,
+				9E180636193AE3F900037286 /* FSN_categories.h */,
+				9E180637193AE3F900037286 /* FSN_categories.m */,
+				9E180638193AE3F900037286 /* FSNConnection.h */,
+				9E180639193AE3F900037286 /* FSNConnection.m */,
+				9E18063A193AE3F900037286 /* FSNData.h */,
+				9E18063B193AE3F900037286 /* FSNData.m */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -291,11 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E180624193AD24800037286 /* Map.m in Sources */,
-				9E180633193AE27E00037286 /* FSNConnection.m in Sources */,
-				9E180632193AE27E00037286 /* FSN_categories.m in Sources */,
+				9E18063D193AE3F900037286 /* FSNConnection.m in Sources */,
+				9E18063C193AE3F900037286 /* FSN_categories.m in Sources */,
 				9E1805FB193ACEAC00037286 /* AppDelegate.m in Sources */,
 				9E180627193AD2D500037286 /* Meter.m in Sources */,
-				9E180634193AE27E00037286 /* FSNData.m in Sources */,
+				9E18063E193AE3F900037286 /* FSNData.m in Sources */,
 				9E180621193AD21900037286 /* Splash.m in Sources */,
 				9E1805F7193ACEAC00037286 /* main.m in Sources */,
 			);
