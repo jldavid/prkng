@@ -1,23 +1,37 @@
 #import "Map.h"
+#import "FSNConnection.h"
 
 @interface Map ()
-
 @end
 
 @implementation Map
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", @"http://www1.toronto.ca", @"/City_Of_Toronto/Information_&_Technology/Open_Data/Data_Sets/Assets/Files/greenPParking.json"]];
+    FSNConnection *connection = [FSNConnection withUrl:url
+                                                method:FSNRequestMethodPOST
+                                               headers:nil
+                                            parameters:nil
+                                            parseBlock:^id(FSNConnection *c, NSError **error) {
+                                                return [c.responseData dictionaryFromJSONWithError:error];
+                                            }
+                                       completionBlock:^(FSNConnection *c) {
+                                           NSLog(@"complete: %@\n  error: %@\n  parseResult: %@\n", c, c.error, c.parseResult);
+                                           NSError *error = nil;
+                                           //NSDictionary *json = [NSJSONSerialization JSONObjectWithData:c.responseData options:kNilOptions error:&error];
+                                           //NSString *token = [json objectForKey:@"token"];
+                                           //NSLog(@"Token: %@", token);
+                                           
+                                       }
+                                         progressBlock:^(FSNConnection *c) {
+                                             NSLog(@"progress: %@: %.2f", c, c.uploadProgress);
+                                         }];
+    [connection start];
+    
+    
     // Do any additional setup after loading the view.
 }
 
