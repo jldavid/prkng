@@ -137,6 +137,7 @@
                             </button>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="aSm-Lo-95B" id="VlU-Rp-NtT"/>
                         <segue destination="xjO-FT-WYb" kind="push" identifier="meter" id="VtQ-4W-z0l"/>

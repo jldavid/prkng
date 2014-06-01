@@ -16,6 +16,7 @@
 @end
 
 #define PARKING_RADIUS 1.0
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
 @implementation Map
 
@@ -27,6 +28,22 @@
     //self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
     
     //[self.locationManager startUpdatingLocation];
+    
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x095ABB)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    self.navigationItem.titleView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"title.png"]];
+    
+    UIImage *disclosure = [UIImage imageNamed:@"disclosure.png"];
+    UIBarButtonItem *disclosureItem = [[UIBarButtonItem alloc]
+                                       initWithImage:disclosure style:0 target:nil action:nil];
+    NSArray *actionButtonItems = @[disclosureItem];
+    self.navigationItem.leftBarButtonItems = actionButtonItems;
+    
+    UIImage *pinpoint = [UIImage imageNamed:@"pinpoint.png"];
+    UIBarButtonItem *pinpointItem = [[UIBarButtonItem alloc]
+                                       initWithImage:pinpoint style:0 target:nil action:nil];
+    NSArray *actionButtonItemsTwo = @[pinpointItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", @"http://www1.toronto.ca", @"/City_Of_Toronto/Information_&_Technology/Open_Data/Data_Sets/Assets/Files/greenPParking.json"]];
     
