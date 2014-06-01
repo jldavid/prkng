@@ -48,76 +48,76 @@ static iBeaconService *_sharedInstance = nil;
 }
 
 /*
-- (void)initializePeripheralManager {
-    // initialize new peripheral manager and begin monitoring for updates
-    if (!self.peripheralManager) {
-        self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
-        
-        // fire initial notification
-        [self fireUpdateNotificationForStatus:@"Initializing CBPeripheralManager and waiting for state updates..."];
-    }
-}
-
-- (void)startAdvertisingBeacon {
-    // initialize new CLBeaconRegion and start advertising target region
-    if (![self.peripheralManager isAdvertising]) {
-        self.peripheralData = [[BeaconRegion targetRegion] peripheralDataWithMeasuredPower:nil];
-        [self.peripheralManager startAdvertising:self.peripheralData];
-    }
-}
-
-- (void)stopAdvertisingBeacon {
-    // stop advertising CLBeaconRegion
-    if ([self.peripheralManager isAdvertising]) {
-        [self.peripheralManager stopAdvertising];
-        self.peripheralManager = nil;
-        self.peripheralData = nil;
-    }
-}
-
-#pragma mark - CBPeripheralManagerDelegate
-- (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
-    
-    NSString *status;
-    switch (peripheral.state) {
-        case CBPeripheralManagerStateUnsupported:
-            // ensure you are using a device supporting Bluetooth 4.0 or above.
-            // not supported on iOS 7 simulator
-            status = @"Device platform does not support BTLE peripheral role.";
-            break;
-            
-        case CBPeripheralManagerStateUnauthorized:
-            // verify app is permitted to use Bluetooth
-            status = @"App is not authorized to use BTLE peripheral role.";
-            break;
-            
-        case CBPeripheralManagerStatePoweredOff:
-            // Bluetooth service is powered off
-            status = @"Bluetooth service is currently powered off on this device.";
-            break;
-            
-        case CBPeripheralManagerStatePoweredOn:
-            // start advertising CLBeaconRegion
-            status = @"Now advertising iBeacon signal.  Monitor other device for location updates.";
-            [self startAdvertisingBeacon];
-            break;
-            
-        case CBPeripheralManagerStateResetting:
-            // Temporarily lost connection
-            status = @"Bluetooth connection was lost.  Waiting for update...";
-            break;
-            
-        case CBPeripheralManagerStateUnknown:
-        default:
-            // Connection status unknown
-            status = @"Current peripheral state unknown.  Waiting for update...";
-            break;
-    }
-    
-    // fire notification with status update
-    [self fireUpdateNotificationForStatus:status];
-}
-*/
+ - (void)initializePeripheralManager {
+ // initialize new peripheral manager and begin monitoring for updates
+ if (!self.peripheralManager) {
+ self.peripheralManager = [[CBPeripheralManager alloc] initWithDelegate:self queue:nil];
+ 
+ // fire initial notification
+ [self fireUpdateNotificationForStatus:@"Initializing CBPeripheralManager and waiting for state updates..."];
+ }
+ }
+ 
+ - (void)startAdvertisingBeacon {
+ // initialize new CLBeaconRegion and start advertising target region
+ if (![self.peripheralManager isAdvertising]) {
+ self.peripheralData = [[BeaconRegion targetRegion] peripheralDataWithMeasuredPower:nil];
+ [self.peripheralManager startAdvertising:self.peripheralData];
+ }
+ }
+ 
+ - (void)stopAdvertisingBeacon {
+ // stop advertising CLBeaconRegion
+ if ([self.peripheralManager isAdvertising]) {
+ [self.peripheralManager stopAdvertising];
+ self.peripheralManager = nil;
+ self.peripheralData = nil;
+ }
+ }
+ 
+ #pragma mark - CBPeripheralManagerDelegate
+ - (void)peripheralManagerDidUpdateState:(CBPeripheralManager *)peripheral {
+ 
+ NSString *status;
+ switch (peripheral.state) {
+ case CBPeripheralManagerStateUnsupported:
+ // ensure you are using a device supporting Bluetooth 4.0 or above.
+ // not supported on iOS 7 simulator
+ status = @"Device platform does not support BTLE peripheral role.";
+ break;
+ 
+ case CBPeripheralManagerStateUnauthorized:
+ // verify app is permitted to use Bluetooth
+ status = @"App is not authorized to use BTLE peripheral role.";
+ break;
+ 
+ case CBPeripheralManagerStatePoweredOff:
+ // Bluetooth service is powered off
+ status = @"Bluetooth service is currently powered off on this device.";
+ break;
+ 
+ case CBPeripheralManagerStatePoweredOn:
+ // start advertising CLBeaconRegion
+ status = @"Now advertising iBeacon signal.  Monitor other device for location updates.";
+ [self startAdvertisingBeacon];
+ break;
+ 
+ case CBPeripheralManagerStateResetting:
+ // Temporarily lost connection
+ status = @"Bluetooth connection was lost.  Waiting for update...";
+ break;
+ 
+ case CBPeripheralManagerStateUnknown:
+ default:
+ // Connection status unknown
+ status = @"Current peripheral state unknown.  Waiting for update...";
+ break;
+ }
+ 
+ // fire notification with status update
+ [self fireUpdateNotificationForStatus:status];
+ }
+ */
 
 - (void)fireUpdateNotificationForStatus:(NSString*)status {
     // fire notification to update displayed status
@@ -144,10 +144,11 @@ static iBeaconService *_sharedInstance = nil;
     NSLog(@"Initializing CLLocationManager and initiating region monitoring...");
 }
 
-- (void)stopMonitoringForRegion:(CLBeaconRegion*)region {
+- (void)stopMonitoringForRegion
+{
     // stop monitoring for region
-    [self.locationManager stopMonitoringForRegion:region];
-
+    [self.locationManager stopMonitoringForRegion:[BeaconRegion targetRegion]];
+    
     self.locationManager = nil;
     
     // reset notifiers
@@ -164,29 +165,29 @@ static iBeaconService *_sharedInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region {
-   
+    
     // handle notifyEntryStateOnDisplay
     // notify user they have entered the region, if you haven't already
-//    if (manager == self.locationManager &&
-//        [region.identifier isEqualToString:kUniqueRegionIdentifier] &&
-//        state == CLRegionStateInside &&
-//        !self.didShowEntranceNotifier) {
+    //    if (manager == self.locationManager &&
+    //        [region.identifier isEqualToString:kUniqueRegionIdentifier] &&
+    //        state == CLRegionStateInside &&
+    //        !self.didShowEntranceNotifier) {
     
-        // start beacon ranging
-        [self startBeaconRanging];
+    // start beacon ranging
+    [self startBeaconRanging];
     //}
 }
 
 - (void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region {
-
+    
     // handle notifyOnEntry
     // notify user they have entered the region, if you haven't already
-//    if (manager == self.locationManager &&
-//        [region.identifier isEqualToString:kUniqueRegionIdentifier] &&
-//        !self.didShowEntranceNotifier) {
+    //    if (manager == self.locationManager &&
+    //        [region.identifier isEqualToString:kUniqueRegionIdentifier] &&
+    //        !self.didShowEntranceNotifier) {
     
-        // start beacon ranging
-        [self startBeaconRanging];
+    // start beacon ranging
+    [self startBeaconRanging];
     //}
 }
 
@@ -227,14 +228,16 @@ static iBeaconService *_sharedInstance = nil;
     // identify closest beacon in range
     if ([beacons count] > 0) {
         CLBeacon *closestBeacon = beacons[0];
-
+        
         //[self fireUpdateNotificationForStatus:[NSString stringWithFormat:@"Beacon found, proximity = %f", closestBeacon.accuracy]];
-
+        
         self.proximity = closestBeacon.accuracy;
-       
-        if (closestBeacon.accuracy < .3 && closestBeacon.accuracy >= 0)
+        
+        CGFloat radius = .3;
+        
+        if (closestBeacon.accuracy < radius && closestBeacon.accuracy >= 0)
             [self fireUpdateNotificationForStatus:@"kEnterRegion"];
-        else if (closestBeacon.accuracy > .3)
+        else if (closestBeacon.accuracy > radius)
             [self fireUpdateNotificationForStatus:@"kExitRegion"];
         else
             [self fireUpdateNotificationForStatus:@"kNone"];
@@ -243,7 +246,7 @@ static iBeaconService *_sharedInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *)manager rangingBeaconsDidFailForRegion:(CLBeaconRegion *)region withError:(NSError *)error {
-
+    
     // fire notification of range failure
     NSLog(@"Beacon ranging failed with error: %@", error);
     
@@ -259,7 +262,7 @@ static iBeaconService *_sharedInstance = nil;
 }
 
 - (void)locationManager:(CLLocationManager *)manager monitoringDidFailForRegion:(CLRegion *)region withError:(NSError *)error {
-
+    
     // fire notification with status update
     NSLog(@"Region monitoring failed with error: %@", error);
     

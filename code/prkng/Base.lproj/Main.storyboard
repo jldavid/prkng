@@ -274,6 +274,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="326" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youspot.png" translatesAutoresizingMaskIntoConstraints="NO" id="gqh-jc-yuf">
+                                <rect key="frame" x="63" y="118" width="201" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meter.png" translatesAutoresizingMaskIntoConstraints="NO" id="UQL-fH-rsu">
+                                <rect key="frame" x="27" y="225" width="267" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -309,7 +317,9 @@
         <image name="greypoupon.png" width="320" height="568"/>
         <image name="idBG" width="35" height="35"/>
         <image name="mapView" width="320" height="222"/>
+        <image name="meter.png" width="246" height="91"/>
         <image name="splash.png" width="320" height="568"/>
+        <image name="youspot.png" width="184" height="81"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

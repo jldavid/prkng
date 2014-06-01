@@ -49,6 +49,12 @@
 		9E52FC62193B5C5C007F1774 /* greypoupon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC60193B5C5C007F1774 /* greypoupon@2x.png */; };
 		9E52FC66193B5FB1007F1774 /* shield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC64193B5FB1007F1774 /* shield@2x.png */; };
 		9E52FC68193B60BF007F1774 /* shield.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC67193B60BF007F1774 /* shield.png */; };
+		9E52FC6B193B6738007F1774 /* youspot.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC69193B6738007F1774 /* youspot.png */; };
+		9E52FC6C193B6738007F1774 /* youspot@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC6A193B6738007F1774 /* youspot@2x.png */; };
+		9E52FC6F193B6B2F007F1774 /* meter.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC6D193B6B2F007F1774 /* meter.png */; };
+		9E52FC70193B6B2F007F1774 /* meter@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC6E193B6B2F007F1774 /* meter@2x.png */; };
+		9E52FC73193B7399007F1774 /* meter-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC71193B7399007F1774 /* meter-blue.png */; };
+		9E52FC74193B7399007F1774 /* meter-blue@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC72193B7399007F1774 /* meter-blue@2x.png */; };
 		9EA86530193AEC4A003A7F10 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */; };
 /* End PBXBuildFile section */
 
@@ -122,6 +128,12 @@
 		9E52FC60193B5C5C007F1774 /* greypoupon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "greypoupon@2x.png"; sourceTree = "<group>"; };
 		9E52FC64193B5FB1007F1774 /* shield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shield@2x.png"; sourceTree = "<group>"; };
 		9E52FC67193B60BF007F1774 /* shield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shield.png; sourceTree = "<group>"; };
+		9E52FC69193B6738007F1774 /* youspot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = youspot.png; sourceTree = "<group>"; };
+		9E52FC6A193B6738007F1774 /* youspot@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "youspot@2x.png"; sourceTree = "<group>"; };
+		9E52FC6D193B6B2F007F1774 /* meter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = meter.png; sourceTree = "<group>"; };
+		9E52FC6E193B6B2F007F1774 /* meter@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meter@2x.png"; sourceTree = "<group>"; };
+		9E52FC71193B7399007F1774 /* meter-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meter-blue.png"; sourceTree = "<group>"; };
+		9E52FC72193B7399007F1774 /* meter-blue@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "meter-blue@2x.png"; sourceTree = "<group>"; };
 		9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
 		9EA8652B193AEC4A003A7F10 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
 		9EA8652C193AEC4A003A7F10 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
@@ -278,6 +290,12 @@
 		9E52FC43193AFDE8007F1774 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9E52FC71193B7399007F1774 /* meter-blue.png */,
+				9E52FC72193B7399007F1774 /* meter-blue@2x.png */,
+				9E52FC6D193B6B2F007F1774 /* meter.png */,
+				9E52FC6E193B6B2F007F1774 /* meter@2x.png */,
+				9E52FC69193B6738007F1774 /* youspot.png */,
+				9E52FC6A193B6738007F1774 /* youspot@2x.png */,
 				9E52FC67193B60BF007F1774 /* shield.png */,
 				9E52FC64193B5FB1007F1774 /* shield@2x.png */,
 				9E52FC5F193B5C5C007F1774 /* greypoupon.png */,
@@ -393,19 +411,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E52FC59193B3671007F1774 /* disclosure.png in Resources */,
+				9E52FC6F193B6B2F007F1774 /* meter.png in Resources */,
 				9E52FC66193B5FB1007F1774 /* shield@2x.png in Resources */,
 				9E52FC47193AFDFC007F1774 /* splash@2x.png in Resources */,
 				9E52FC5A193B3671007F1774 /* disclosure@2x.png in Resources */,
 				9E52FC46193AFDFC007F1774 /* splash.png in Resources */,
 				9E180603193ACEAC00037286 /* Images.xcassets in Resources */,
+				9E52FC73193B7399007F1774 /* meter-blue.png in Resources */,
 				9E52FC50193B287B007F1774 /* GothamRnd-Book.otf in Resources */,
+				9E52FC6B193B6738007F1774 /* youspot.png in Resources */,
+				9E52FC70193B6B2F007F1774 /* meter@2x.png in Resources */,
 				9E52FC51193B287B007F1774 /* GothamRnd-Light.otf in Resources */,
 				9E1805F5193ACEAC00037286 /* InfoPlist.strings in Resources */,
 				9E52FC5D193B3850007F1774 /* pinpoint.png in Resources */,
 				9E52FC62193B5C5C007F1774 /* greypoupon@2x.png in Resources */,
+				9E52FC6C193B6738007F1774 /* youspot@2x.png in Resources */,
 				9E52FC55193B2CA3007F1774 /* title.png in Resources */,
 				9E1805FE193ACEAC00037286 /* Main.storyboard in Resources */,
 				9E52FC5E193B3850007F1774 /* pinpoint@2x.png in Resources */,
+				9E52FC74193B7399007F1774 /* meter-blue@2x.png in Resources */,
 				9E52FC68193B60BF007F1774 /* shield.png in Resources */,
 				9E52FC56193B2CA3007F1774 /* title@2x.png in Resources */,
 				9E52FC61193B5C5C007F1774 /* greypoupon.png in Resources */,

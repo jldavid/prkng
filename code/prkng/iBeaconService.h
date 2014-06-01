@@ -12,7 +12,11 @@
 
 @interface iBeaconService : NSObject <CLLocationManagerDelegate>
 
+@property (nonatomic) BOOL ableToShowEnteranceNotifier;
+
 + (instancetype)sharedManager;
 - (double)getProximityToClosestRegion;
+
+- (void)stopMonitoringForRegion;
 
 @end

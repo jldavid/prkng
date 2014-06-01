@@ -3,6 +3,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ParkingLotCell.h"
 #import "MKMapView+ZoomLevel.h"
+#import "iBeaconService.h"
 
 @interface Map ()
 
@@ -12,6 +13,10 @@
 @property (strong, nonatomic) CLLocation *currentLocation;
 
 @property (strong, nonatomic) NSMutableArray *nearbyParkingLots;
+
+@property (nonatomic, strong) UIAlertView *alertView;
+
+@property (nonatomic) BOOL userNotified;
 
 @end
 
@@ -41,49 +46,58 @@
     
     UIImage *pinpoint = [UIImage imageNamed:@"pinpoint.png"];
     UIBarButtonItem *pinpointItem = [[UIBarButtonItem alloc]
-                                       initWithImage:pinpoint style:0 target:self action:@selector(gforth)];
+                                     initWithImage:pinpoint style:0 target:self action:@selector(gforth)];
     NSArray *actionButtonItemsTwo = @[pinpointItem];
     self.navigationItem.rightBarButtonItems = actionButtonItemsTwo;
     
-    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", @"http://www1.toronto.ca", @"/City_Of_Toronto/Information_&_Technology/Open_Data/Data_Sets/Assets/Files/greenPParking.json"]];
+    [iBeaconService sharedManager];
     
-    FSNConnection *connection = [FSNConnection withUrl:url
-                                                method:FSNRequestMethodPOST
-                                               headers:nil
-                                            parameters:nil
-                                            parseBlock:^id(FSNConnection *c, NSError **error) {
-                                                return [c.responseData dictionaryFromJSONWithError:error];
-                                            }
-                                       completionBlock:^(FSNConnection *c) {
-                                           
-                                           self.parkingData = (NSDictionary *)c.parseResult;
-                                           
-                                           //NSLog(@"complete: %@\n  error: %@\n  parseResult: %@\n", c, c.error, c.parseResult);
-
-                                           //NSLog(@"complete: %@\n  error: %@\n  parseResult: %@\n", c, c.error, c.parseResult);
-
-                                           //NSError *error = nil;
-                                           //NSDictionary *json = [NSJSONSerialization JSONObjectWithData:c.responseData options:kNilOptions error:&error];
-                                           //NSString *token = [json objectForKey:@"token"];
-                                           //NSLog(@"Token: %@", token);
-                                           
-                                       }
-                                         progressBlock:^(FSNConnection *c) {
-                                             //NSLog(@"progress: %@: %.2f", c, c.uploadProgress);
-                                         }];
-    //[connection start];
+    self.userNotified = NO;
     
-    [self setupMapView];
+    [iBeaconService sharedManager].ableToShowEnteranceNotifier = YES;
+    /*
+     
+     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@", @"http://www1.toronto.ca", @"/City_Of_Toronto/Information_&_Technology/Open_Data/Data_Sets/Assets/Files/greenPParking.json"]];
+     
+     FSNConnection *connection = [FSNConnection withUrl:url
+     method:FSNRequestMethodPOST
+     headers:nil
+     parameters:nil
+     parseBlock:^id(FSNConnection *c, NSError **error) {
+     return [c.responseData dictionaryFromJSONWithError:error];
+     }
+     completionBlock:^(FSNConnection *c) {
+     
+     self.parkingData = (NSDictionary *)c.parseResult;
+     
+     //NSLog(@"complete: %@\n  error: %@\n  parseResult: %@\n", c, c.error, c.parseResult);
+     
+     //NSLog(@"complete: %@\n  error: %@\n  parseResult: %@\n", c, c.error, c.parseResult);
+     
+     //NSError *error = nil;
+     //NSDictionary *json = [NSJSONSerialization JSONObjectWithData:c.responseData options:kNilOptions error:&error];
+     //NSString *token = [json objectForKey:@"token"];
+     //NSLog(@"Token: %@", token);
+     
+     }
+     progressBlock:^(FSNConnection *c) {
+     //NSLog(@"progress: %@: %.2f", c, c.uploadProgress);
+     }];
+     //[connection start];
+     
+     [self setupMapView];
+     
+     */
     
-// populate dummy data
+    // populate dummy data
     
     [self populateDummyData];
     
-//    for (NSString* family in [UIFont familyNames]) {
-//        NSLog(@"%@", family);
-//        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
-//            NSLog(@" %@", name); }
-//    }
+    //    for (NSString* family in [UIFont familyNames]) {
+    //        NSLog(@"%@", family);
+    //        for (NSString* name in [UIFont fontNamesForFamilyName: family]) {
+    //            NSLog(@" %@", name); }
+    //    }
 }
 
 -(void) gback {
@@ -128,21 +142,21 @@
     
     [self.nearbyParkingLots addObject:p4];
     
-//    NSDictionary *p5 = @{@"address" : @"37 Queen Street East",
-//                         @"kilometersAway" : @"1.1",
-//                         @"minutesAway" : @"5",
-//                         @"remainingSpots" : @"157",
-//                         @"rate" : @"$4.50 /hr"};
-//    
-//    [self.nearbyParkingLots addObject:p5];
-//    
-//    NSDictionary *p6 = @{@"address" : @"45 Bay Street",
-//                         @"kilometersAway" : @"1.7",
-//                         @"minutesAway" : @"9",
-//                         @"remainingSpots" : @"19",
-//                         @"rate" : @"$4.50 /hr"};
-//    
-//    [self.nearbyParkingLots addObject:p6];
+    //    NSDictionary *p5 = @{@"address" : @"37 Queen Street East",
+    //                         @"kilometersAway" : @"1.1",
+    //                         @"minutesAway" : @"5",
+    //                         @"remainingSpots" : @"157",
+    //                         @"rate" : @"$4.50 /hr"};
+    //
+    //    [self.nearbyParkingLots addObject:p5];
+    //
+    //    NSDictionary *p6 = @{@"address" : @"45 Bay Street",
+    //                         @"kilometersAway" : @"1.7",
+    //                         @"minutesAway" : @"9",
+    //                         @"remainingSpots" : @"19",
+    //                         @"rate" : @"$4.50 /hr"};
+    //
+    //    [self.nearbyParkingLots addObject:p6];
     
     [self setupTableView];
 }
@@ -151,6 +165,63 @@
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     [super viewWillAppear:animated];
+}
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:YES];
+    
+    // add observer for location notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleRegionUpdate:)
+                                                 name:@"kRegionUpdateNotification"
+                                               object:nil];
+    
+    
+    
+	self.alertView = [[UIAlertView alloc] initWithTitle:@"You found a spot"
+                                                message:@"Parkle has detected that you have parked your vehicle in spot B52 . You time of entry is 0:00pm and if you Accept, you will begin to be charged a rate of $2.00 per hour."
+                                               delegate:self
+                                      cancelButtonTitle:@"Decline"
+                                      otherButtonTitles:@"Accept", nil];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:@"kRegionUpdateNotification" object:nil];
+    
+    [self performSegueWithIdentifier:@"meter" sender:self];
+}
+
+- (void)viewDidDisappear:(BOOL)animated
+{
+    [super viewDidDisappear:YES];
+    
+    self.userNotified = NO;
+}
+
+- (void)handleRegionUpdate:(NSNotification *)notification {
+    
+    NSString *regionStatus = (NSString *)notification.userInfo[@"status"];
+    
+    if ([regionStatus isEqualToString:@"kEnterRegion"])
+    {
+        NSLog(@"kEnterRegion");
+        
+        if ([iBeaconService sharedManager].ableToShowEnteranceNotifier == YES)
+        {
+            [self.alertView show];
+            [iBeaconService sharedManager].ableToShowEnteranceNotifier = NO;
+        }
+    }
+    else if ([regionStatus isEqualToString:@"kExitRegion"])
+    {
+        NSLog(@"kExitRegion");
+        
+        //        [iBeaconService sharedManager].ableToShowEnteranceNotifier = YES;
+    }
+    
+    NSLog(@"%@", notification.userInfo[@"status"]);
 }
 
 - (void)parseJSON
@@ -206,19 +277,19 @@
 
 - (void)setupMapView
 {
-//    CLLocationCoordinate2D coordinate;
-//    coordinate.latitude = 43.6667;
-//    coordinate.longitude = -79.4167;
-//    
-//    self.mapView.showsUserLocation = YES;
-//    //self.mapView.delegate = self;
-//    
-//    [self.mapView setCenterCoordinate:coordinate zoomLevel:13 animated:NO];
-//    
-//    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:NO];
-//    self.mapView.mapType = MKMapTypeStandard;
-//    self.mapView.scrollEnabled = NO;
-//    self.mapView.rotateEnabled = NO;
+    //    CLLocationCoordinate2D coordinate;
+    //    coordinate.latitude = 43.6667;
+    //    coordinate.longitude = -79.4167;
+    //
+    //    self.mapView.showsUserLocation = YES;
+    //    //self.mapView.delegate = self;
+    //
+    //    [self.mapView setCenterCoordinate:coordinate zoomLevel:13 animated:NO];
+    //
+    //    [self.mapView setUserTrackingMode:MKUserTrackingModeFollow animated:NO];
+    //    self.mapView.mapType = MKMapTypeStandard;
+    //    self.mapView.scrollEnabled = NO;
+    //    self.mapView.rotateEnabled = NO;
 }
 
 /*
@@ -248,7 +319,7 @@
     ParkingLotCell *cell = (ParkingLotCell *)[tableView dequeueReusableCellWithIdentifier:@"cell" forIndexPath:indexPath];
     
     NSDictionary *parkingDict = self.nearbyParkingLots[indexPath.row];
-
+    
     NSString *address = [parkingDict objectForKey:@"address"];
     NSString *kmAway = [parkingDict objectForKey:@"kilometersAway"];
     NSString *minutesAway = [parkingDict objectForKey:@"minutesAway"];
@@ -264,13 +335,13 @@
     cell.addressLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:19];
     cell.addressLabel.text = address;
     
-//    CLLocationCoordinate2D curCoord;
-//    curCoord.latitude = [[parkingDict valueForKey:@"lat"] doubleValue];
-//    curCoord.longitude = [[parkingDict valueForKey:@"lng"] doubleValue];
-//    
-//    CLLocation *parkingLocation = [[CLLocation alloc] initWithLatitude:curCoord.latitude longitude:curCoord.longitude];
-//    CLLocationDistance kilometersAway = [self getKilometersAwayLocation1:self.currentLocation location2:parkingLocation];
-//    NSString *kmAwayString = [NSString stringWithFormat:@"%f", kilometersAway];
+    //    CLLocationCoordinate2D curCoord;
+    //    curCoord.latitude = [[parkingDict valueForKey:@"lat"] doubleValue];
+    //    curCoord.longitude = [[parkingDict valueForKey:@"lng"] doubleValue];
+    //
+    //    CLLocation *parkingLocation = [[CLLocation alloc] initWithLatitude:curCoord.latitude longitude:curCoord.longitude];
+    //    CLLocationDistance kilometersAway = [self getKilometersAwayLocation1:self.currentLocation location2:parkingLocation];
+    //    NSString *kmAwayString = [NSString stringWithFormat:@"%f", kilometersAway];
     
     cell.lotDetailLabel.font = [UIFont fontWithName:@"GothamRounded-Light" size:14];
     cell.lotDetailLabel.text = [NSString stringWithFormat:@"%@ km  %@ mins  %@ %@", kmAway, minutesAway, remainingSpots, [remainingSpots intValue] == 1 ? @"spot" : @"spot"];
