@@ -30,6 +30,8 @@
 		9E18063C193AE3F900037286 /* FSN_categories.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180637193AE3F900037286 /* FSN_categories.m */; };
 		9E18063D193AE3F900037286 /* FSNConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E180639193AE3F900037286 /* FSNConnection.m */; };
 		9E18063E193AE3F900037286 /* FSNData.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E18063B193AE3F900037286 /* FSNData.m */; };
+		9E52FC46193AFDFC007F1774 /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC44193AFDFC007F1774 /* splash.png */; };
+		9E52FC47193AFDFC007F1774 /* splash@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E52FC45193AFDFC007F1774 /* splash@2x.png */; };
 		9EA86530193AEC4A003A7F10 /* libPayPalMobile.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +81,8 @@
 		9E180639193AE3F900037286 /* FSNConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNConnection.m; sourceTree = "<group>"; };
 		9E18063A193AE3F900037286 /* FSNData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSNData.h; sourceTree = "<group>"; };
 		9E18063B193AE3F900037286 /* FSNData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSNData.m; sourceTree = "<group>"; };
+		9E52FC44193AFDFC007F1774 /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		9E52FC45193AFDFC007F1774 /* splash@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "splash@2x.png"; sourceTree = "<group>"; };
 		9EA8652A193AEC4A003A7F10 /* libPayPalMobile.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libPayPalMobile.a; sourceTree = "<group>"; };
 		9EA8652B193AEC4A003A7F10 /* PayPalConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalConfiguration.h; sourceTree = "<group>"; };
 		9EA8652C193AEC4A003A7F10 /* PayPalFuturePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayPalFuturePaymentViewController.h; sourceTree = "<group>"; };
@@ -160,6 +164,7 @@
 		9E1805F0193ACEAC00037286 /* prkng */ = {
 			isa = PBXGroup;
 			children = (
+				9E52FC43193AFDE8007F1774 /* Images */,
 				9EA86529193AEC1A003A7F10 /* PayPalMobile */,
 				31A99E51193AE50E005C194D /* iBeaconService */,
 				9E180635193AE28600037286 /* Libraries */,
@@ -218,6 +223,15 @@
 				9E18063B193AE3F900037286 /* FSNData.m */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		9E52FC43193AFDE8007F1774 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				9E52FC44193AFDFC007F1774 /* splash.png */,
+				9E52FC45193AFDFC007F1774 /* splash@2x.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 		9EA86529193AEC1A003A7F10 /* PayPalMobile */ = {
@@ -309,6 +323,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E52FC47193AFDFC007F1774 /* splash@2x.png in Resources */,
+				9E52FC46193AFDFC007F1774 /* splash.png in Resources */,
 				9E180603193ACEAC00037286 /* Images.xcassets in Resources */,
 				9E1805F5193ACEAC00037286 /* InfoPlist.strings in Resources */,
 				9E1805FE193ACEAC00037286 /* Main.storyboard in Resources */,
