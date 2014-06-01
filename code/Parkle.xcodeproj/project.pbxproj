@@ -69,11 +69,11 @@
 		31A99E55193AE51E005C194D /* BeaconRegion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BeaconRegion.m; sourceTree = "<group>"; };
 		31A99E5B193B0F1A005C194D /* ParkingLotCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkingLotCell.h; sourceTree = "<group>"; };
 		31A99E5C193B0F1A005C194D /* ParkingLotCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkingLotCell.m; sourceTree = "<group>"; };
-		9E1805E7193ACEAC00037286 /* prkng.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = prkng.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E1805E7193ACEAC00037286 /* Parkle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Parkle.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E1805EA193ACEAC00037286 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9E1805EC193ACEAC00037286 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		9E1805EE193ACEAC00037286 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		9E1805F2193ACEAC00037286 /* prkng-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "prkng-Info.plist"; sourceTree = "<group>"; };
+		9E1805F2193ACEAC00037286 /* Parkle-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Parkle-Info.plist"; sourceTree = "<group>"; };
 		9E1805F4193ACEAC00037286 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9E1805F6193ACEAC00037286 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9E1805F8193ACEAC00037286 /* prkng-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "prkng-Prefix.pch"; sourceTree = "<group>"; };
@@ -81,9 +81,9 @@
 		9E1805FA193ACEAC00037286 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		9E1805FD193ACEAC00037286 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9E180602193ACEAC00037286 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		9E180608193ACEAC00037286 /* prkngTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = prkngTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E180608193ACEAC00037286 /* ParkleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ParkleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E180609193ACEAC00037286 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		9E180611193ACEAC00037286 /* prkngTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "prkngTests-Info.plist"; sourceTree = "<group>"; };
+		9E180611193ACEAC00037286 /* ParkleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ParkleTests-Info.plist"; sourceTree = "<group>"; };
 		9E180613193ACEAC00037286 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		9E180615193ACEAC00037286 /* prkngTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = prkngTests.m; sourceTree = "<group>"; };
 		9E18061F193AD21900037286 /* Splash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Splash.h; sourceTree = "<group>"; };
@@ -173,8 +173,8 @@
 		9E1805E8193ACEAC00037286 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				9E1805E7193ACEAC00037286 /* prkng.app */,
-				9E180608193ACEAC00037286 /* prkngTests.xctest */,
+				9E1805E7193ACEAC00037286 /* Parkle.app */,
+				9E180608193ACEAC00037286 /* ParkleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -228,7 +228,7 @@
 		9E1805F1193ACEAC00037286 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E1805F2193ACEAC00037286 /* prkng-Info.plist */,
+				9E1805F2193ACEAC00037286 /* Parkle-Info.plist */,
 				9E1805F3193ACEAC00037286 /* InfoPlist.strings */,
 				9E1805F6193ACEAC00037286 /* main.m */,
 				9E1805F8193ACEAC00037286 /* prkng-Prefix.pch */,
@@ -248,7 +248,7 @@
 		9E180610193ACEAC00037286 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9E180611193ACEAC00037286 /* prkngTests-Info.plist */,
+				9E180611193ACEAC00037286 /* ParkleTests-Info.plist */,
 				9E180612193ACEAC00037286 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -307,9 +307,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		9E1805E6193ACEAC00037286 /* prkng */ = {
+		9E1805E6193ACEAC00037286 /* Parkle */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E180619193ACEAC00037286 /* Build configuration list for PBXNativeTarget "prkng" */;
+			buildConfigurationList = 9E180619193ACEAC00037286 /* Build configuration list for PBXNativeTarget "Parkle" */;
 			buildPhases = (
 				9E1805E3193ACEAC00037286 /* Sources */,
 				9E1805E4193ACEAC00037286 /* Frameworks */,
@@ -319,14 +319,14 @@
 			);
 			dependencies = (
 			);
-			name = prkng;
+			name = Parkle;
 			productName = prkng;
-			productReference = 9E1805E7193ACEAC00037286 /* prkng.app */;
+			productReference = 9E1805E7193ACEAC00037286 /* Parkle.app */;
 			productType = "com.apple.product-type.application";
 		};
-		9E180607193ACEAC00037286 /* prkngTests */ = {
+		9E180607193ACEAC00037286 /* ParkleTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9E18061C193ACEAC00037286 /* Build configuration list for PBXNativeTarget "prkngTests" */;
+			buildConfigurationList = 9E18061C193ACEAC00037286 /* Build configuration list for PBXNativeTarget "ParkleTests" */;
 			buildPhases = (
 				9E180604193ACEAC00037286 /* Sources */,
 				9E180605193ACEAC00037286 /* Frameworks */,
@@ -337,9 +337,9 @@
 			dependencies = (
 				9E18060E193ACEAC00037286 /* PBXTargetDependency */,
 			);
-			name = prkngTests;
+			name = ParkleTests;
 			productName = prkngTests;
-			productReference = 9E180608193ACEAC00037286 /* prkngTests.xctest */;
+			productReference = 9E180608193ACEAC00037286 /* ParkleTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -356,7 +356,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 9E1805E2193ACEAC00037286 /* Build configuration list for PBXProject "prkng" */;
+			buildConfigurationList = 9E1805E2193ACEAC00037286 /* Build configuration list for PBXProject "Parkle" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -369,8 +369,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				9E1805E6193ACEAC00037286 /* prkng */,
-				9E180607193ACEAC00037286 /* prkngTests */,
+				9E1805E6193ACEAC00037286 /* Parkle */,
+				9E180607193ACEAC00037286 /* ParkleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -442,7 +442,7 @@
 /* Begin PBXTargetDependency section */
 		9E18060E193ACEAC00037286 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 9E1805E6193ACEAC00037286 /* prkng */;
+			target = 9E1805E6193ACEAC00037286 /* Parkle */;
 			targetProxy = 9E18060D193ACEAC00037286 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -551,13 +551,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "prkng/prkng-Prefix.pch";
-				INFOPLIST_FILE = "prkng/prkng-Info.plist";
+				GCC_PREFIX_HEADER = "prkng/Parkle-Prefix.pch";
+				INFOPLIST_FILE = "prkng/Parkle-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/prkng",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Parkle;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -568,13 +568,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "prkng/prkng-Prefix.pch";
-				INFOPLIST_FILE = "prkng/prkng-Info.plist";
+				GCC_PREFIX_HEADER = "prkng/Parkle-Prefix.pch";
+				INFOPLIST_FILE = "prkng/Parkle-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/prkng",
 				);
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Parkle;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -594,8 +594,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "prkngTests/prkngTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "prkngTests/ParkleTests-Info.plist";
+				PRODUCT_NAME = ParkleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -612,8 +612,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "prkng/prkng-Prefix.pch";
-				INFOPLIST_FILE = "prkngTests/prkngTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "prkngTests/ParkleTests-Info.plist";
+				PRODUCT_NAME = ParkleTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -622,7 +622,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		9E1805E2193ACEAC00037286 /* Build configuration list for PBXProject "prkng" */ = {
+		9E1805E2193ACEAC00037286 /* Build configuration list for PBXProject "Parkle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E180617193ACEAC00037286 /* Debug */,
@@ -631,7 +631,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E180619193ACEAC00037286 /* Build configuration list for PBXNativeTarget "prkng" */ = {
+		9E180619193ACEAC00037286 /* Build configuration list for PBXNativeTarget "Parkle" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E18061A193ACEAC00037286 /* Debug */,
@@ -640,7 +640,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9E18061C193ACEAC00037286 /* Build configuration list for PBXNativeTarget "prkngTests" */ = {
+		9E18061C193ACEAC00037286 /* Build configuration list for PBXNativeTarget "ParkleTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				9E18061D193ACEAC00037286 /* Debug */,
